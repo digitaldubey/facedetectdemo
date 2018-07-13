@@ -177,8 +177,7 @@
     tracker.on('track', function (event) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       flames = [];
-      console.log("FACE DEtected");
-      console.log("Method 1 called");
+
 
       event.data.forEach(function (rect) {
         frameCount++;
@@ -190,6 +189,7 @@
         var fixLeft = -rect.width / 2;
         var image = flameFrames[frameCount % flameFrames.length];
 
+        console.log("frames"+frameCount);
         flames.push({
           image: image,
           x: (rect.x + fixLeft),
