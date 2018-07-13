@@ -181,10 +181,10 @@
 
       event.data.forEach(function (rect) {
 
-        ctx.drawImage(video, 0,0, 1080, 1920);
+        ctx.drawImage(video, 0,0, ctx.width, ctx.height);
 
      // save canvas image as data url (png format by default)
-     var dataURL = ctx.toDataURL();
+     var dataURL = canvas.toDataURL();
 
      console.log("DATA"+dataURL);
 
