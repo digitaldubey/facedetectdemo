@@ -180,25 +180,51 @@
 
 
       event.data.forEach(function (rect) {
-        frameCount++;
-        var orgWidth = 256;
-        var orgHeight = 256;
-        var newWidth = (rect.width * 2);
-        var newHeight = newWidth / orgWidth * orgHeight;
-        var fixTop = rect.height * 0.2;
-        var fixLeft = -rect.width / 2;
-        var image = flameFrames[frameCount % flameFrames.length];
 
-        console.log("frames"+frameCount);
-        flames.push({
-          image: image,
-          x: (rect.x + fixLeft),
-          y: (rect.y - newHeight + fixTop),
-          width: newWidth,
-          height: newHeight
-        });
+        ctx.beginPath();
+     ctx.moveTo(170, 80);
+     ctx.bezierCurveTo(130, 100, 130, 150, 230, 150);
+     ctx.bezierCurveTo(250, 180, 320, 180, 340, 150);
+     ctx.bezierCurveTo(420, 150, 420, 120, 390, 100);
+     ctx.bezierCurveTo(430, 40, 370, 30, 340, 50);
+     ctx.bezierCurveTo(320, 5, 250, 20, 250, 50);
+     ctx.bezierCurveTo(200, 5, 150, 20, 170, 80);
+     ctx.closePath();
+     ctx.lineWidth = 5;
+     ctx.fillStyle = '#8ED6FF';
+     ctx.fill();
+     ctx.strokeStyle = '#0000ff';
+     ctx.stroke();
 
-        ctx.drawImage(image, (rect.x + fixLeft), (rect.y - newHeight + fixTop), newWidth, newHeight);
+     // save canvas image as data url (png format by default)
+     var dataURL = canvas.toDataURL();
+
+     console.log("DATA"+dataURL);
+
+     break;
+
+
+        // frameCount++;
+        // var orgWidth = 256;
+        // var orgHeight = 256;
+        // var newWidth = (rect.width * 2);
+        // var newHeight = newWidth / orgWidth * orgHeight;
+        // var fixTop = rect.height * 0.2;
+        // var fixLeft = -rect.width / 2;
+        // var image = flameFrames[frameCount % flameFrames.length];
+        //
+        // console.log("frames"+frameCount);
+        // flames.push({
+        //   image: image,
+        //   x: (rect.x + fixLeft),
+        //   y: (rect.y - newHeight + fixTop),
+        //   width: newWidth,
+        //   height: newHeight
+        // });
+        //
+        // ctx.drawImage(image, (rect.x + fixLeft), (rect.y - newHeight + fixTop), newWidth, newHeight);
+
+
       });
     });
   }
