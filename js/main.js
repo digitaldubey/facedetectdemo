@@ -156,7 +156,7 @@
 
   function setupTrackingJS() {
 
-    console.log("FACE DEtected");
+
     var canvas = document.querySelector('#step1 canvas.visible');
     var scaledWidth = 240, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
     var frameCount = 0;
@@ -177,6 +177,8 @@
     tracker.on('track', function (event) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       flames = [];
+      console.log("FACE DEtected");
+      console.log("Method 1 called");
 
       event.data.forEach(function (rect) {
         frameCount++;
