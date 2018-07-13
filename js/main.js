@@ -201,7 +201,7 @@
 
      console.log("DATA"+dataURL);
 
-     break;
+    
 
 
         // frameCount++;
