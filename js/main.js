@@ -12,6 +12,8 @@
 
   //load all flame animation frames
   function loadImages() {
+
+
     var promises = [];
 
     for (var i = 1; i < 14; i++) {
@@ -153,6 +155,8 @@
   }
 
   function setupTrackingJS() {
+
+    console.log("FACE DEtected");
     var canvas = document.querySelector('#step1 canvas.visible');
     var scaledWidth = 240, scaledHeight = Math.round((scaledWidth / pictureWidth) * pictureHeight);
     var frameCount = 0;
